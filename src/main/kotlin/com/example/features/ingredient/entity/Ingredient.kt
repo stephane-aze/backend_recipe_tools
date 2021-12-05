@@ -4,6 +4,7 @@ import com.example.features.food.entity.Food.uniqueIndex
 import org.jetbrains.exposed.sql.Table
 
 object Ingredient: Table("Ingredient") {
+    val id = integer("id").uniqueIndex()
     val productId = integer("product_id").uniqueIndex()
     val quantity = float("quantity")
     val unity = varchar("unity",10)

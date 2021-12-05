@@ -4,6 +4,7 @@ import com.example.features.food.entity.Food
 import org.jetbrains.exposed.sql.Table
 
 object Category: Table("category") {
+    val id = integer("id").autoIncrement().uniqueIndex()
     val categoryId = integer("category_id")
         .uniqueIndex()
         .references(Food.categoryId)
