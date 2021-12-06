@@ -25,14 +25,14 @@ import java.text.DateFormat
 
 
 fun main(args: Array<String>) {
-    startKoin { modules(applicationModule, authModule, ingredientModule, recipeModule) }
+    //startKoin { modules(applicationModule, authModule, ingredientModule, recipeModule) }
     io.ktor.server.netty.EngineMain.main(args)
 }
 
 @Suppress("unused") // Referenced in application.conf
 @kotlin.jvm.JvmOverloads
 fun Application.module(testing: Boolean = false) {
-
+    startKoin { modules(applicationModule, authModule, ingredientModule, recipeModule) }
     val jwtManager: JwtManager by inject()
 
     install(Authentication) {
