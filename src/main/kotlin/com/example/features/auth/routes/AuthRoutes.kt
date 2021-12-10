@@ -1,7 +1,7 @@
 package com.example.features.auth.routes
 
 
-//import com.selimatasoy.features.starwars.routes.getmovie.getMovie
+
 import com.example.features.auth.routes.createuser.createUser
 import com.example.features.auth.routes.loginuser.loginUser
 import com.example.features.auth.routes.userinfo.userInfo

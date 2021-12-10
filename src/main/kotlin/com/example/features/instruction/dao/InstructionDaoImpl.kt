@@ -1,12 +1,10 @@
 package com.example.features.instruction.dao
 
 import com.example.extensions.connectToExampleDatabase
-import com.example.features.auth.entity.User
 import com.example.features.instruction.dao.mapper.fromInstructionDaoToInstructionDto
 import com.example.features.instruction.dto.InstructionDto
 import com.example.features.instruction.entity.Instruction
 import org.jetbrains.exposed.sql.*
-import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.transactions.transaction
 
 class InstructionDaoImpl: InstructionDao {

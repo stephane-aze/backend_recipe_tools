@@ -3,7 +3,7 @@ package com.example.features.auth.data
 import com.example.features.auth.dao.AuthDao
 import com.example.features.auth.dto.LoginRequestDto
 import com.example.features.auth.dto.UserInfoDto
-import com.example.features.auth.entity.User.password
+
 import com.example.jwt.JwtManager
 
 class AuthDataImpl(private val authenticationDao: AuthDao, private val jwtManager: JwtManager) :

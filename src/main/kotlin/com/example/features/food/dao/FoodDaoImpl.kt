@@ -1,24 +1,22 @@
 package com.example.features.food.dao
 
 import com.example.extensions.connectToExampleDatabase
-import com.example.features.auth.entity.PreferenceUser
-import com.example.features.auth.entity.User
 import com.example.features.category.dao.mapper.fromCategoryDaoToCategoryDto
 import com.example.features.category.entity.Category
 import com.example.features.food.dto.FoodDto
-import com.example.features.food.entity.Food
+import com.example.features.food.entity.Food2
 import org.jetbrains.exposed.sql.*
-import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.transactions.transaction
 
 class FoodDaoImpl : FoodDao{
     override fun createFood(foodDto: FoodDto) {
         Database.connectToExampleDatabase()
-
+        print("boooo ${foodDto.category}")
         transaction {
             addLogger(StdOutSqlLogger)
-            SchemaUtils.create(Food)
-            Food.insert {
+            SchemaUtils.create(Food2)
+            Food2.insert {
+                //it[id] = 1
                 it[name] = foodDto.name
                 it[categoryId] = foodDto.category!!.id
             }
@@ -43,15 +41,15 @@ class FoodDaoImpl : FoodDao{
         val foods = transaction {
 
             addLogger(StdOutSqlLogger)
-            return@transaction Food.selectAll().map{
+            return@transaction Food2.selectAll().map{
 
-                val cat=it[Food.categoryId]?.let {
+                val cat=it[Food2.categoryId]?.let {
                     Category.select {
                         Category.id eq it
                     }.limit(1).single().fromCategoryDaoToCategoryDto()
                 }
                 FoodDto(
-                    name = it[Food.name],
+                    name = it[Food2.name],
                     category =cat
                 )
             }

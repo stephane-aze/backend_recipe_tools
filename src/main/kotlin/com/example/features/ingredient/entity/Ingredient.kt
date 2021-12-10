@@ -1,6 +1,5 @@
 package com.example.features.ingredient.entity
 
-import com.example.features.food.entity.Food.uniqueIndex
 import org.jetbrains.exposed.sql.Table
 
 object Ingredient: Table("Ingredient") {

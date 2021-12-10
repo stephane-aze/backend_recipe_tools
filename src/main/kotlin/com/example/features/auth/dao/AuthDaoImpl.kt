@@ -6,7 +6,6 @@ import com.example.features.auth.dto.UserInfoDto
 import com.example.features.auth.entity.PreferenceUser
 import com.example.features.auth.entity.User
 import com.example.features.category.dao.mapper.fromCategoryDaoToCategoryDto
-import com.example.features.category.dto.CategoryDto
 import com.example.features.category.entity.Category
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
@@ -29,7 +28,7 @@ class AuthDaoImpl() : AuthDao {
         val userInfo = transaction {
             addLogger(StdOutSqlLogger)
             val user = User.select { User.email eq email }.single()
-            val preferences=PreferenceUser.select {
+            val preferences= PreferenceUser.select {
                 PreferenceUser.userId eq user[User.id]
             }
             val list =preferences.map {

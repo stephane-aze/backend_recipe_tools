@@ -2,6 +2,7 @@ package com.example
 
 import com.example.di.applicationModule
 import com.example.features.auth.di.authModule
+import com.example.features.category.di.categoryModule
 import com.example.features.error.GenericServerError
 import com.example.features.ingredient.di.ingredientModule
 import com.example.features.recipe.di.recipeModule
@@ -11,6 +12,7 @@ import io.ktor.application.*
 import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.module.kotlin.MissingKotlinParameterException
+import foodModule
 import io.ktor.auth.*
 import io.ktor.auth.jwt.*
 import io.ktor.features.*
@@ -32,7 +34,7 @@ fun main(args: Array<String>) {
 @Suppress("unused") // Referenced in application.conf
 @kotlin.jvm.JvmOverloads
 fun Application.module(testing: Boolean = false) {
-    startKoin { modules(applicationModule, authModule, ingredientModule, recipeModule) }
+    startKoin { modules(applicationModule, authModule, ingredientModule, recipeModule,foodModule, categoryModule) }
     val jwtManager: JwtManager by inject()
 
     install(Authentication) {

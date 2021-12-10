@@ -14,7 +14,7 @@ import org.koin.ktor.ext.inject
 fun Route.userInfo() {
     val authenticationData: AuthData by inject()
     val jwtManager: JwtManager by inject()
-    get("/auth/userInfo") {
+    get("/api/auth/userInfo") {
         call.respond(authenticationData.getUserInfo(jwtManager.getUsernameFromToken(call.getAuthorizationTokenWithoutBearer())!!))
     }
 }

@@ -11,7 +11,7 @@ import org.koin.ktor.ext.inject
 
 fun Route.createUser() {
     val authData: AuthData by inject()
-    post("/auth/createUser") {
+    post("/api/auth/createUser") {
 
         authData.createUser(call.receive())
         call.respond(HttpStatusCode.OK)

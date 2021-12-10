@@ -1,8 +1,6 @@
 package com.example.features.category.routes.getcategory
 
-import com.example.extensions.getAuthorizationTokenWithoutBearer
 import com.example.extensions.parseId
-import com.example.features.auth.data.AuthData
 import com.example.features.category.data.CategoryData
 import com.example.jwt.JwtManager
 import io.ktor.application.*
