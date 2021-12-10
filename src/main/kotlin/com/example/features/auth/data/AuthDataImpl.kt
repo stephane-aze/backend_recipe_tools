@@ -21,6 +21,7 @@ class AuthDataImpl(private val authenticationDao: AuthDao, private val jwtManage
     }
 
     override fun createUser(userInfoDto: UserInfoDto) {
+        print(userInfoDto)
         return authenticationDao.createUser(userInfoDto)
     }
 }

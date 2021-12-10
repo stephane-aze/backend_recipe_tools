@@ -10,9 +10,9 @@ class FoodDataImpl(private val foodDao: FoodDao, private val jwtManager: JwtMana
         return foodDao.createFood(foodDto)
     }
 
-    override fun getFood(id: Long): FoodDto {
+   /* override fun getFood(id: Long): FoodDto {
         return foodDao.getFood(id)
-    }
+    }*/
 
     override fun getFoods(): List<FoodDto> {
         return foodDao.getFoods()

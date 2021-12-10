@@ -4,6 +4,6 @@ import com.example.features.food.dto.FoodDto
 
 interface FoodDao {
     fun createFood(foodDto: FoodDto)
-    fun getFood(id: Long): FoodDto
+    //fun getFood(id: Long): FoodDto
     fun getFoods(): List<FoodDto>
 }

@@ -9,7 +9,7 @@ import org.koin.ktor.ext.inject
 
 fun Route.getFoods() {
     val foodData: FoodData by inject()
-    get("/public-api/v1/food") {
+    get("/api/food") {
 
         call.respond(foodData.getFoods())
     }

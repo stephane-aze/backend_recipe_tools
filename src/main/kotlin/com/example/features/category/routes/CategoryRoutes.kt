@@ -8,7 +8,7 @@ import io.ktor.application.*
 
 import io.ktor.routing.*
 
-fun Application.CategoryRoutes() {
+fun Application.categoryRoutes() {
     routing {
         getCategory()
         getCategories()

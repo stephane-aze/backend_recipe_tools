@@ -13,7 +13,7 @@ import org.koin.ktor.ext.inject
 
 fun Route.createFood() {
     val foodData: FoodData by inject()
-    post("/public-api/v1/food") {
+    post("/api/food") {
         foodData.createFood(call.receive<FoodDto>())
         call.respond(HttpStatusCode.OK)
     }

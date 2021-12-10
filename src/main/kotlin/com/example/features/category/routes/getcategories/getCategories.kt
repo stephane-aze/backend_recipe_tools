@@ -11,7 +11,7 @@ import org.koin.ktor.ext.inject
 fun Route.getCategories() {
     val categoryData: CategoryData by inject()
     val jwtManager: JwtManager by inject()
-    get("/api/v1/category") {
+    get("/api/category") {
         call.respond(categoryData.getCategories())
     }
 }
